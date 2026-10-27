@@ -1,0 +1,49 @@
+{
+  "generatedAt": "2026-10-27T04:13:03.205772+00:00",
+  "mode": "headlines",
+  "articles": [
+    {
+      "title": "LitPivot: Developing research ideas through dynamic contextualization within the literature landscape",
+      "url": "https://huggingface.co/blog/allenai/litpivot",
+      "category": "AI & agents",
+      "publisher": "Hugging Face",
+      "publishedAt": "2026-10-23T16:15:50+00:00"
+    },
+    {
+      "title": "Does Your Model Run on AWS Trainium? Look It Up",
+      "url": "https://huggingface.co/blog/torch-neuronx-model-support",
+      "category": "AI & agents",
+      "publisher": "Hugging Face",
+      "publishedAt": "2026-10-23T00:00:00+00:00"
+    },
+    {
+      "title": "How bug bounty sharpens one researcher’s security skills",
+      "url": "https://github.blog/security/how-bug-bounty-sharpens-one-researchers-security-skills/",
+      "category": "Software",
+      "publisher": "GitHub Blog",
+      "publishedAt": "2026-10-22T17:21:30+00:00"
+    },
+    {
+      "title": "The bridge to agent-scale Git infrastructure",
+      "url": "https://github.blog/engineering/architecture-optimization/the-bridge-to-agent-scale-git-infrastructure/",
+      "category": "Software",
+      "publisher": "GitHub Blog",
+      "publishedAt": "2026-10-21T16:00:00+00:00"
+    },
+    {
+      "title": "Kane prematurely announced as Ballon d'Or winner - but he wasn't only one",
+      "url": "https://www.bbc.co.uk/sport/football/articles/cmly0g2y7q2zo?at_medium=RSS&at_campaign=rss",
+      "category": "Football",
+      "publisher": "BBC Sport",
+      "publishedAt": "2026-10-26T23:35:27+00:00"
+    },
+    {
+      "title": "Putellas wins record-equalling third Ballon d'Or to extend Spanish dominance",
+      "url": "https://www.bbc.co.uk/sport/football/articles/cqp9gky38lj3o?at_medium=RSS&at_campaign=rss",
+      "category": "Football",
+      "publisher": "BBC Sport",
+      "publishedAt": "2026-10-26T23:14:39+00:00"
+    }
+  ],
+  "unavailableSources": []
+}

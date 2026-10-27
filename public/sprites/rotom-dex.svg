@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" shape-rendering="crispEdges" role="img" aria-label="Rotom Dex">
+ <path fill="#3f5863" d="M39 3h18v6h9v7h8v17h9v-9h7v20h-9v12h-9v25h-9v8H33v-8h-9V56h-9V44H6V24h7v9h9V16h8V9h9z"/>
+ <path fill="#75d8de" d="M8 29h5v9h15v12H18V40H8zM83 29h5v11H78v10H68V38h15z"/>
+ <path fill="#f08557" d="M39 9h18v6h10v8h-5v11h7v43h-8v7H35v-7h-8V34h7V23h-5v-8h10z"/>
+ <path fill="#ffd386" d="M39 9h8v7h-8zM32 37h5v34h-5z"/>
+ <path fill="#b94f44" d="M60 37h9v40h-8v7H35v-7h25z"/>
+ <path fill="#365567" d="M33 37h30v30H33z"/>
+ <path fill="#b0f0df" d="M37 41h22v22H37z"/>
+ <path fill="#d8fff0" d="M37 41h22v5H37z"/>
+ <path fill="#354b58" d="M39 48h5v7h-5zM52 48h5v7h-5zM43 57h10v3H43z"/>
+ <path fill="#fcf9d9" d="M39 48h2v3h-2zM52 48h2v3h-2z"/>
+ <path fill="#9fe7df" d="M44 20h8v7h-8zM39 72h18v4H39z"/>
+ <path fill="#3f5863" d="M35 84h8v8h-8zM53 84h8v8h-8z"/>
+ <path fill="#f7c46c" d="M44 4h8v5h-8z"/>
+</svg>
