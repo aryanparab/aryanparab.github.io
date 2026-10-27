@@ -1,8 +1,10 @@
-# Live portfolio
+# Hosting
 
-Public URL: https://aryan-parab-pokedex.kindbow12.chatgpt.site
+Primary frontend URL: https://aryanparab.github.io/
 
-Hosted with Sites. The original React/Vite project remains in this repository root and is still ready for GitHub Pages. No GitHub repository was connected at publication time.
+Existing backend and analytics dashboard: https://aryan-parab-pokedex.kindbow12.chatgpt.site
+
+The React frontend is published from this repository by GitHub Actions. The existing Sites deployment remains the AI/analytics backend, with CORS restricted to the GitHub frontend origin.
 
 ## Hosted source
 

@@ -1,13 +1,13 @@
 # GitHub hosting and your own domain
 
-The React source is ready for GitHub Pages, with `.github/workflows/deploy.yml` building and deploying it. No GitHub remote/account access is configured in this workspace yet.
+The React source is ready for GitHub Pages, with `.github/workflows/deploy.yml` building and deploying it. The repository is now connected at https://github.com/aryanparab/aryanparab.github.io and GitHub Pages is configured to publish through GitHub Actions.
 
 1. Create a public repository named `aryanparab.github.io` under your GitHub account and push this repository's source (never `.env.local`).
 2. Repository → Settings → Pages → Source → GitHub Actions.
 3. The free user-site address will be `https://aryanparab.github.io/` after the workflow succeeds.
 4. If you own a domain, add it under Settings → Pages → Custom domain, then configure the registrar DNS using GitHub's instructions. Confirm whether you mean `aryan-portofolio.com` or `aryan-portfolio.com` before registering or changing DNS.
 
-GitHub Pages is static hosting. Rotom needs a separate server to keep the Groq key secret, and analytics needs a collector/database and owner authorization. The current Sites endpoints are same-origin and cannot simply be copied as cross-origin URLs. Migration is not complete until those backend services are deployed and connected on another provider, such as Cloudflare Workers + D1. The current Sites analytics sign-in also needs replacing when moving off Sites.
+GitHub Pages is static hosting. Rotom needs a separate server to keep the Groq key secret, and analytics needs a collector/database and owner authorization. The existing Sites backend accepts the exact https://aryanparab.github.io origin, and both public endpoint URLs are configured as GitHub Actions repository variables. The frontend migration uses the existing Sites backend; moving the backend off Sites would require another provider, such as Cloudflare Workers + D1. The current Sites analytics sign-in also needs replacing when moving off Sites.
 
 ## Paste the Groq key locally
 
