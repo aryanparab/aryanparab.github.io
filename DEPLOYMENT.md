@@ -22,8 +22,9 @@ The key was never written into source or the frontend bundle. Avoid pasting repl
 
 ## News
 
-The current news edition is the publisher-feed snapshot bundled during publication. The GitHub daily-refresh workflow will operate only after a GitHub repository and Actions are configured. The Sites deployment does not yet run that GitHub schedule.
+GitHub Actions refreshes the publisher-feed edition daily at 14:17 UTC (07:17 PDT / 06:17 PST), then builds and deploys GitHub Pages. Scheduled jobs can run later than the nominal time. Manual workflow dispatch and pushes also refresh the feed. When all sources fail, deployment preserves the bundled prior edition and emits a workflow warning; the timestamp is never falsified.
 
+The Sites UI reads `https://aryanparab.github.io/news.json`, so both surfaces use the daily GitHub edition without a separate scheduled assistant or hosting build. Source headlines work without model credentials; optional LLM summaries require the configured Cloudflare secrets.
 
 ## Rotom conversation update
 

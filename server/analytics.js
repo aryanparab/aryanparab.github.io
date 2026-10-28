@@ -1,5 +1,5 @@
 import {allowedOrigin,corsHeaders} from './origins.js';
-const names=new Set(['page_view','section_view','notes_open','contact_click','outbound_click','rotom_question','rotom_success','rotom_error','load_ms','lcp_ms','cls']);
+const names=new Set(['project_select','page_view','section_view','notes_open','contact_click','outbound_click','rotom_question','rotom_success','rotom_error','load_ms','lcp_ms','cls']);
 const rate=new Map();
 const json=(data,status=200)=>Response.json(data,{status,headers:{'Cache-Control':'no-store'}});
 export function owner(request,env){return !!env.ANALYTICS_OWNER_EMAIL&&request.headers.get('oai-authenticated-user-email')?.toLowerCase()===env.ANALYTICS_OWNER_EMAIL.toLowerCase()&&!!request.headers.get('oai-authenticated-user-id');}
