@@ -100,7 +100,92 @@ const projectNotes = {
     "Explored ONNX conversion, model compression, and edge-deployment optimization."
   ]
 };
-projects.forEach(project=>{project.notes=projectNotes[project.id];});
+const projectLinks = {
+  "leveldb": {
+    "codeUrl": "https://github.com/aryanparab/proj2-543"
+  },
+  "idol": {
+    "codeUrl": "https://github.com/aryanparab/Idol-Coach",
+    "liveUrl": "https://idol-coach-git-main-aryanparabs-projects.vercel.app/"
+  },
+  "factual": {
+    "codeUrl": "https://github.com/aryanparab/CNN-article-writer"
+  },
+  "grocery": {
+    "codeUrl": "https://github.com/aryanparab/grocery-list-generator"
+  },
+  "alter-ego": {
+    "codeUrl": "https://github.com/aryanparab/YourWingman"
+  },
+  "mood-music": {
+    "codeUrl": "https://github.com/aryanparab/Music-recommendation-using-mood-detection"
+  }
+};
+projects.forEach(project=>{project.notes=projectNotes[project.id];Object.assign(project,projectLinks[project.id]||{});});
+projects.push(...[
+  {
+    "id": "impactlink",
+    "name": "ImpactLink",
+    "category": "AI",
+    "icon": "⬡",
+    "color": "purple",
+    "subtitle": "Grant intelligence for NGOs.",
+    "description": "An AI grant-intelligence platform that helps NGOs find funding, write funder-specific proposals, build localized budgets, and discover mission-aligned collaborators.",
+    "detail": "Built an end-to-end grant-intelligence workflow for NGOs: upload PDF/DOCX proposals, discover relevant grants, draft funder-specific applications, build localized budgets, and find collaborators. Extracts proposal text with PyMuPDF and structures it with a parser. MiniLM-L6-v2 produces 384-dimensional embeddings; ChromaDB cosine search retrieves the top five grants. Uses Llama 3.3 70B through Groq to explain matches, assess fit, and suggest application tips. Retrieved vector results remain authoritative for grant IDs; the model only adds explanations. Streams eight-section, funder-specific drafts over Server-Sent Events, with inline editing, formatting, and PDF export. Provides a seven-step proposal interview that drafts sections as users answer, with approval, AI revision, and manual editing. Generates geography-aware line-item budgets from award ceilings and supports refinement through plain-English chat. Ranks collaboration-open NGO profiles against proposal embeddings in memory. The top six receive AI explanations, collaboration types, and shared-focus suggestions. Keeps saved work in a dashboard where selecting a proposal filters the matching grants. Built with React, FastAPI, LangChain, ChromaDB, and Llama.",
+    "tags": [
+      "React",
+      "FastAPI",
+      "LangChain",
+      "ChromaDB",
+      "MiniLM",
+      "Groq",
+      "Llama 3.3 70B"
+    ],
+    "date": "",
+    "source": "profile",
+    "codeUrl": "https://github.com/aryanparab/ImpactLink",
+    "videoUrl": "https://youtu.be/-QlgHftegNg",
+    "notes": [
+      "Built an end-to-end grant-intelligence workflow for NGOs: upload PDF/DOCX proposals, discover relevant grants, draft funder-specific applications, build localized budgets, and find collaborators.",
+      "Extracts proposal text with PyMuPDF and structures it with a parser. MiniLM-L6-v2 produces 384-dimensional embeddings; ChromaDB cosine search retrieves the top five grants.",
+      "Uses Llama 3.3 70B through Groq to explain matches, assess fit, and suggest application tips. Retrieved vector results remain authoritative for grant IDs; the model only adds explanations.",
+      "Streams eight-section, funder-specific drafts over Server-Sent Events, with inline editing, formatting, and PDF export.",
+      "Provides a seven-step proposal interview that drafts sections as users answer, with approval, AI revision, and manual editing.",
+      "Generates geography-aware line-item budgets from award ceilings and supports refinement through plain-English chat.",
+      "Ranks collaboration-open NGO profiles against proposal embeddings in memory. The top six receive AI explanations, collaboration types, and shared-focus suggestions.",
+      "Keeps saved work in a dashboard where selecting a proposal filters the matching grants. Built with React, FastAPI, LangChain, ChromaDB, and Llama."
+    ]
+  },
+  {
+    "id": "netflix-imdb",
+    "name": "Netflix IMDb Recommender",
+    "category": "Systems",
+    "icon": "▻",
+    "color": "orange",
+    "subtitle": "Personalized discovery, enriched with IMDb.",
+    "description": "A recommendation app that enriches your Netflix catalog with IMDb ratings and metadata, helping you discover highly rated titles and hidden gems you haven’t watched.",
+    "detail": "Combines personalized Netflix recommendations with IMDb ratings and metadata to help users find highly rated titles and hidden gems. Built a Python scraping and enrichment pipeline with a React interface and Express backend. Added an admin panel with one-click scraping, real-time progress logs, full-pipeline automation, session management, and a data-status dashboard. Supports category, genre, minimum-rating, watched-status, and title-search filters. Persists watched status and merges re-scraped data without losing viewing history. Titles retain all their Netflix categories. Enriches only new titles on later runs and uses checkpoints to resume interrupted IMDb enrichment. Designed a responsive dark interface with movie cards, metadata, and an administrative workflow.",
+    "tags": [
+      "Python",
+      "React",
+      "Express",
+      "Web scraping",
+      "Data pipelines"
+    ],
+    "date": "",
+    "source": "profile",
+    "codeUrl": "https://github.com/aryanparab/netflix-imdb-scrapper",
+    "notes": [
+      "Combines personalized Netflix recommendations with IMDb ratings and metadata to help users find highly rated titles and hidden gems.",
+      "Built a Python scraping and enrichment pipeline with a React interface and Express backend.",
+      "Added an admin panel with one-click scraping, real-time progress logs, full-pipeline automation, session management, and a data-status dashboard.",
+      "Supports category, genre, minimum-rating, watched-status, and title-search filters.",
+      "Persists watched status and merges re-scraped data without losing viewing history. Titles retain all their Netflix categories.",
+      "Enriches only new titles on later runs and uses checkpoints to resume interrupted IMDb enrichment.",
+      "Designed a responsive dark interface with movie cards, metadata, and an administrative workflow."
+    ]
+  }
+]);
 export const resumes = {ai:{label:'AI & agents',file:'aryan-ai.pdf'},systems:{label:'Software & systems',file:'aryan-systems.pdf'},robotics:{label:'Robotics',file:'aryan-robotics.pdf'},research:{label:'AI research',file:'aryan-ai-research.pdf'}};
 export const experience = [
 { name:'Cadence Design Systems', role:'Generative AI Software Engineering Intern', date:'May 2026 — Present', location:'San Jose, CA', points:[
@@ -170,6 +255,6 @@ export const knowledge = [
 { id:'certifications', title:'Certifications', section:'experience', source:'profile', text:'Aryan earned AWS Solutions Architect and Microsoft PL-300 certifications while working at Deloitte.' },
 { id:'awards', title:'Hackathon wins', section:'about', source:'ai', text:'Winner of the four-hour USC Claude AI Hackathon 2025 and USC ACM Hackathon 2026. First runner-up in a quantum hackathon; top 10 in two hackathons during undergraduate study.' },
 ...experience.map((e,i)=>({id:'experience-'+i,title:e.name,section:'experience',source:e.source,text:`${e.role} at ${e.name}, ${e.date}, ${e.location}. ${e.points.join(' ')} ${(e.more||[]).join(' ')}`})),
-...projects.map(p=>({id:p.id,title:p.name,section:'projects',source:p.source,text:`${p.name} (${p.category}), ${p.date}. ${p.description} ${p.detail} Live: ${p.liveUrl||'not provided'}. Code: ${p.codeUrl||'not provided'}. Technologies: ${p.tags.join(', ')}.`})),
+...projects.map(p=>({id:p.id,title:p.name,section:'projects',source:p.source,text:`${p.name} (${p.category}), ${p.date}. ${p.description} ${p.detail} Live: ${p.liveUrl||'not provided'}. Code: ${p.codeUrl||'not provided'}. Video: ${p.videoUrl||'not provided'}. Technologies: ${p.tags.join(', ')}.`})),
 ...skills.map(([title,text],i)=>({id:'skills-'+i,title,section:'skills',source: title==='Systems & robotics'?'robotics':'ai',text:`${title}: ${text}.`}))
 ];
