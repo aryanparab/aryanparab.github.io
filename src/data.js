@@ -101,6 +101,7 @@ const projectNotes = {
   ]
 };
 const projectLinks = {
+  "supermemory": {"codeUrl":"https://github.com/aryanparab/luke-memory"},
   "database": {"codeUrl":"https://github.com/aryanparab/Data-Talker","liveUrl":"https://data-talker-demo.onrender.com/"},
   "leveldb": {
     "codeUrl": "https://github.com/aryanparab/proj2-543"
