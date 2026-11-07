@@ -27,32 +27,10 @@ header{min-height:80px;display:flex;align-items:center;justify-content:space-bet
 @media(max-width:600px){body{font-size:15px}header,main,footer{width:calc(100% - 32px)}h1{letter-spacing:-1.3px}.hero-copy{font-size:15px}.hero-actions{gap:16px}.hero-tags{gap:8px}.tag{font-size:13px}.achievement-strip{gap:8px;padding:16px 0}.achievement-strip>span{width:100%}.milestone-result{margin-left:8px}.course-grid{grid-template-columns:minmax(0,1fr)}.journey-stop{padding-left:36px}.journey-card:before{left:-25px;width:24px}.journey-card ul{font-size:15px}.journey-date{gap:4px 12px}.filters{gap:4px}.filters button{padding:8px}.filters button span{margin-left:6px}.project-points{padding-left:20px}.project-points li+li{margin-top:8px}.metric{align-items:start;gap:12px}.metric strong{font-size:26px}.metric span{max-width:170px}.messages{padding:16px 16px 0}.suggestions{padding:0 16px 16px}.chat form{margin:0 16px 16px}.interest-grid{gap:24px 16px}.interest-item h3{font-size:20px}.interest-item p{font-size:15px}.masthead{gap:8px}.paper-emblem{font-size:20px}.masthead p{font-size:14px}.story-meta{font-size:13px}.contact>a{gap:8px}.companions{right:8px;bottom:max(8px,env(safe-area-inset-bottom))}.fact-bubble{max-width:calc(100vw - 24px)}footer{padding-bottom:96px}}
 @media(max-width:360px){.interest-grid{grid-template-columns:minmax(0,1fr)}.hero-actions{gap:8px 16px}.button{gap:16px;padding:10px 12px}.theme-toggle{padding:8px}.brand strong{font-size:17px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}.reveal-ready{opacity:1;transform:none}}
-/* The trainer and party share the original day/night mountain landscape. */
-.team-scene{isolation:isolate;aspect-ratio:1.08;max-width:400px;margin-inline:auto;width:100%;border-radius:18px;background:#e7ece5;box-shadow:0 8px 24px -18px #3f554444}
-.team-scene>svg{position:absolute;inset:0;width:100%;height:100%;max-height:none;aspect-ratio:auto;z-index:-2}
-.team-scene:after{content:'';position:absolute;inset:0;pointer-events:none;background:linear-gradient(transparent 70%,#243f3822);z-index:5;border-radius:inherit;box-shadow:inset 0 0 0 7px #ffffff15}
-.trainer-photo{position:absolute;left:31%;bottom:14%;width:26%;height:42%;object-fit:contain;object-position:center bottom;filter:drop-shadow(2px 5px 2px #243c3a36);z-index:2}
-.trainer-shadow{position:absolute;bottom:13%;left:42%;width:12%;height:2%;border-radius:50%;background:#263c3b35;filter:blur(3px);z-index:1}
-.team-pokemon{position:absolute;object-fit:contain;image-rendering:pixelated;filter:drop-shadow(0 5px 1px #223a3638);animation:party-drift 5s ease-in-out infinite;animation-delay:var(--drift-delay);z-index:3}
-.team-gyarados{width:49%;height:55%;left:-4%;bottom:17%;z-index:1}
-.team-milotic{width:46%;height:53%;right:-5%;bottom:20%;z-index:1}
-.team-garchomp{width:42%;height:48%;right:8%;bottom:6%;z-index:2}
-.team-lucario{width:25%;height:28%;left:16%;bottom:10%}
-.team-glaceon{width:24%;height:26%;left:24%;bottom:-1%;z-index:4}
-.team-infernape{width:27%;height:30%;right:23%;bottom:-2%;z-index:4}
-.team-scene-sparkle{position:absolute;width:7px;height:7px;background:#fff8d3;transform:rotate(45deg);box-shadow:0 0 14px #fff8d3;opacity:.8;z-index:0}.sparkle-one{top:12%;left:37%}.sparkle-two{top:35%;right:12%;width:4px;height:4px}
-/* Scene colors follow the page theme without replacing its artwork. */
-.night-stars{opacity:0}:root[data-theme=night] .night-stars{opacity:1}
-:root[data-theme=night] .team-scene>svg>path:first-child{fill:#25314d}
-:root[data-theme=night] .team-scene>svg>path:nth-child(2){fill:#f4e2ad}
-:root[data-theme=night] .team-scene>svg>path:nth-child(3){fill:#8294ae}
-:root[data-theme=night] .team-scene>svg>path:nth-child(4){fill:#45596c}
-:root[data-theme=night] .team-scene>svg>path:nth-child(5){fill:#3c5b61}
-:root[data-theme=night] .team-scene>svg>path:nth-child(6){fill:#304e4b}
-:root[data-theme=night] .team-scene>svg>path:nth-child(7){fill:#8c937b}
-:root[data-theme=night] .team-scene{background:#25314d;box-shadow:0 8px 24px -18px #0006}
-@keyframes party-drift{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
-@media(prefers-reduced-motion:reduce){.team-pokemon{animation:none}}
-@media(max-width:650px){.team-scene{max-width:340px;aspect-ratio:1.08}.hero-art{width:100%}}
-
-.pokemon-center{filter:drop-shadow(0 3px 0 #243c3a22)}:root[data-theme=night] .pokemon-center{filter:brightness(.85) drop-shadow(0 0 4px #f0dca522)}
+/* Generated team portrait replaces the individual hero sprites. */
+.team-scene{isolation:isolate;aspect-ratio:1;max-width:400px;margin-inline:auto;width:100%;border-radius:18px;background:#25314d;box-shadow:0 8px 24px -18px #3f554444}
+.team-scene picture{display:block;width:100%;height:100%}.team-hero-image{display:block;width:100%;height:100%;object-fit:cover;border-radius:inherit}
+.hero-motion-toggle{position:absolute;right:12px;bottom:12px;display:grid;place-items:center;width:44px;height:44px;border:1px solid #ffffff66;border-radius:50%;background:#17212edb;color:#fff;font-size:18px;line-height:1;backdrop-filter:blur(8px)}.hero-motion-toggle:hover{background:#17212e}
+:root[data-theme=night] .team-scene{box-shadow:0 8px 24px -18px #0006}
+@media(max-width:760px){.team-scene{max-width:340px}}
+@media(prefers-reduced-motion:reduce){.hero-motion-toggle{display:none}}
