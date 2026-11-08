@@ -1,6 +1,6 @@
 # Portfolio analytics
 
-Live private dashboard: https://aryan-parab-pokedex.kindbow12.chatgpt.site/analytics
+Live private dashboard: https://aryan-parab-pokedex.parab-aryan.chatgpt.site/analytics
 
 Sign in with the ChatGPT account that owns the Site. `ANALYTICS_OWNER_EMAIL` is a server-side secret used to authorize both the dashboard and its data API. The portfolio remains public.
 

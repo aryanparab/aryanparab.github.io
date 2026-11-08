@@ -1,8 +1,10 @@
 // Fast conversational intents are not profile lookups or generated biography answers.
-export function conversationalReply(question){
+export function conversationalReply(question,{model}={}){
  const q=question.toLowerCase().replace(/[’']/g,'').replace(/[^a-z0-9\s]/g,' ').replace(/\s+/g,' ').trim();
  let answer;
- if(/^(?:hi|hey|hello|hiya|heya|yo|sup|good morning|good afternoon|good evening)(?: there| rotom| rotom dex| friend)?$/.test(q))
+ if(model&&/^(?:(?:what|which) (?:ai |language )?model (?:is (?:this|thi)|are you(?: using)?|do you use)|what powers (?:you|rotom))(?: rotom)?$/.test(q))
+  answer=`Bzzt! My AI profile answers use ${model}, served by Groq. I retrieve Aryan’s profile notes to ground those answers; quick greetings use built-in replies.`;
+ else if(/^(?:hi|hey|hello|hiya|heya|yo|sup|good morning|good afternoon|good evening)(?: there| rotom| rotom dex| friend)?$/.test(q))
   answer='Bzzt! Hey there — I’m Rotom, Aryan’s personal Dex. Want to explore his projects, his journey, or a little Aryan lore?';
  else if(/^(?:(?:hi|hey|hello) )?(?:who are you|what are you|who is rotom|who is rotom dex|introduce yourself|whats your name|what is your name|are you a bot|are you an ai)(?: rotom)?$/.test(q))
   answer='I’m Rotom Dex — your guide to Aryan Parab! I specialize in his work, projects, skills, and interests. I can explain a project, compare his experience with a role, or point you to the relevant details. What would you like to explore?';

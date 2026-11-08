@@ -9,7 +9,7 @@ Source: https://github.com/aryanparab/aryanparab.github.io
 
 GitHub Actions builds and deploys to GitHub Pages on pushes to main. The daily workflow refreshes the publisher-feed digest. Repository variables `VITE_RAG_API_URL` and `VITE_ANALYTICS_API_URL` contain public backend endpoint URLs only.
 
-The AI and analytics backend remains on Sites while the frontend is served by GitHub. Its exact allowed cross-origin client is `https://aryanparab.github.io`. The private analytics dashboard remains at https://aryan-parab-pokedex.kindbow12.chatgpt.site/analytics and requires the owner's ChatGPT sign-in. The ignored `.sites/portfolio` checkout holds its publishing configuration and D1 migrations. GitHub Pages cannot execute the backend or store runtime secrets.
+The AI and analytics backend remains on Sites while the frontend is served by GitHub. Its exact allowed cross-origin client is `https://aryanparab.github.io`. The private analytics dashboard remains at https://aryan-parab-pokedex.parab-aryan.chatgpt.site/analytics and requires the owner's ChatGPT sign-in. The ignored `.sites/portfolio` checkout holds its publishing configuration and D1 migrations. GitHub Pages cannot execute the backend or store runtime secrets.
 
 ## Local development
 

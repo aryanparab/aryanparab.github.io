@@ -18,7 +18,7 @@ export default {
    const body=await request.text();if(body.length>16000)return json({error:'Request too large'},413);
    const {question,history}=JSON.parse(body);
    if(typeof question!=='string'||!question.trim()||question.length>600)return json({error:'Question must be 1–600 characters'},400);
-   const social=conversationalReply(question);if(social)return json(social);
+   const social=conversationalReply(question,{model:env.GROQ_MODEL||'openai/gpt-oss-20b'});if(social)return json(social);
    let ai;try{ai=createModelProvider(env);}catch{return json({error:'Groq needs a valid API key',code:'AI_NOT_CONFIGURED'},503);}
    return json(await answerWithAgent(ai,question.trim(),validHistory(history)));
   }catch{return json({error:'Unable to answer right now'},503);}

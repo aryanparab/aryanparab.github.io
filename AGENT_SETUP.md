@@ -6,11 +6,11 @@ Rotom specializes in Aryan Parab’s work, projects, skills, education, leadersh
 
 Run `npm run dev` and open the printed local URL. The development server sends profile questions to the already-deployed Rotom endpoint. It does not start or call Ollama. Local and hosted visitors share one Groq connection. No local API key or `.env.local` is needed when the hosting secret is valid.
 
-Current shared endpoint: https://aryan-parab-pokedex.kindbow12.chatgpt.site/api/profile
+Current shared endpoint: https://aryan-parab-pokedex.parab-aryan.chatgpt.site/api/profile
 
-## One remaining owner action
+## Server-side credential
 
-Groq rejected the previously supplied key with HTTP 401 (`invalid_api_key`), and it was removed from hosting. A valid replacement **GROQ_API_KEY** must be added as a **secret** to the existing Site’s runtime environment, then the saved Site version must be redeployed to apply it. This is a one-time server-side credential, not a setup step for portfolio visitors or local development. Never put it in a `VITE_` variable, React source, or a chat message.
+The hosting runtime uses a secret named **GROQ_API_KEY**. When rotating it, update that secret and redeploy the saved Site version to apply it. Never put the key in a `VITE_` variable, React source, or a chat message. Local `.env.local` is ignored by Git and is not automatically deployed.
 
 The hosted runtime already selects Groq with `GROQ_MODEL=openai/gpt-oss-20b` and low reasoning effort. There is no automatic local-model fallback. A model cannot authenticate without a working provider key; the application does not fabricate generated answers when that connection is missing.
 

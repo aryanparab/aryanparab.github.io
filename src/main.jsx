@@ -34,7 +34,7 @@ function App(){
   const endpoint=import.meta.env.VITE_RAG_API_URL||(import.meta.env.DEV?'/api/profile':null);
   if(!endpoint)throw new Error('unconfigured');
   const response=await fetch(endpoint,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({question:q,history}),signal:AbortSignal.timeout(45000)});
-  if(!response.ok){const failure=await response.json().catch(()=>({}));throw new Error(failure.code==='AI_NOT_CONFIGURED'?'unconfigured':response.status===429?'limited':'unavailable');}
+  if(!response.ok){const failure=await response.json().catch(()=>({}));throw new Error(['AI_NOT_CONFIGURED','AI_AUTH_FAILED'].includes(failure.code)?'unconfigured':response.status===429||failure.code==='AI_RATE_LIMIT'?'limited':'unavailable');}
   const data=await response.json();if(typeof data.answer!=='string'||!Array.isArray(data.sources))throw new Error('unavailable');
   track('rotom_success','rag',Math.round(performance.now()-started));
   setMessages(m=>[...m,{role:'assistant',text:data.answer,sources:data.sources,mode:data.mode}]);

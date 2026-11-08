@@ -24,9 +24,9 @@ export function createLocalHandler(env={}){
    let data;try{data=JSON.parse(body);}catch{send(400,{error:'Invalid JSON'});return;}
    const {question,history}=data;
    if(typeof question!=='string'||!question.trim()||question.length>600){send(400,{error:'Question must be 1–600 characters'});return;}
-   const social=conversationalReply(question);if(social){send(200,social);return;}
+   const social=conversationalReply(question,{model:env.GROQ_MODEL||'openai/gpt-oss-20b'});if(social){send(200,social);return;}
    if(!env.GROQ_API_KEY){
-    const upstream=await fetch(env.ROTOM_HOSTED_API_URL||'https://aryan-parab-pokedex.kindbow12.chatgpt.site/api/profile',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({question:question.trim(),history:validHistory(history)}),signal:AbortSignal.timeout(40000)});
+    const upstream=await fetch(env.ROTOM_HOSTED_API_URL||'https://aryan-parab-pokedex.parab-aryan.chatgpt.site/api/profile',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({question:question.trim(),history:validHistory(history)}),signal:AbortSignal.timeout(40000)});
     const result=await upstream.json();
     if(!upstream.ok){send(upstream.status,{error:'Hosted Groq connection is unavailable',code:result.code||'AI_UNAVAILABLE'});return;}
     send(200,result);return;
